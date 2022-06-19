@@ -1,6 +1,7 @@
 import "./App.css";
 import React from "react";
 import Counter from "./components/Counter";
+import Todos from "./components/Todo/Todos";
 
 class App extends React.Component {
   render() {
@@ -10,7 +11,8 @@ class App extends React.Component {
         <br />
         <hr />
         <br />
-        <Counter />
+        {/* <Counter /> */}
+        <Todos />
       </div>
     );
   }
