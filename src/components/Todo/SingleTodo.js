@@ -2,20 +2,36 @@ import React from "react";
 
 class SingleTodo extends React.Component {
   render() {
-    const { item } = this.props;
+    const { item, deleteTodo, toggleTodo } = this.props;
 
     return (
       <div
         style={{
-          border: "1px solid black",
-          borderRadius: "5px",
           width: "30%",
           margin: "10px auto",
         }}
+        className="card"
       >
-        <h4>{item.id}</h4>
-        <h4>{item.query}</h4>
-        <h4>{item.status ? "Done" : "Pending"}</h4>
+        <div className="card-body">
+          <h5>{item.id}</h5>
+          <h5 className="card-title">{item.query}</h5>
+          <h6 className="card-title">{item.status ? "Done" : "Pending"}</h6>
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={() => deleteTodo(item.id)}
+            style={{ marginRight: "10px" }}
+          >
+            delete
+          </button>
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={() => toggleTodo(item.id)}
+          >
+            toggle
+          </button>
+        </div>
       </div>
     );
   }
